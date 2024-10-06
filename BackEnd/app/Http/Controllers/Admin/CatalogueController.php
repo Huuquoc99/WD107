@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Catalogue;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class ProductController extends Controller
+class CatalogueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,6 +14,9 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $listCatalogue = Catalogue::withCount("products")->get();
+        // $listCatalogue = Catalogue::all();
+        return response()->json( $listCatalogue, 201);
     }
 
     /**
