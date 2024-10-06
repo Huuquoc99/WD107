@@ -40,7 +40,7 @@ class CatalogueController extends Controller
 
             if($request->hasFile("cover"))
             {
-                $filepath = $request->file("cover")->store("updates/catalogues", "public");
+                $filepath = $request->file("cover")->store("uploads/catalogues", "public");
             }else{
                 $filepath = null;
             }
