@@ -23,15 +23,21 @@ class ProductCapacityController extends Controller
      */
     public function create()
     {
-        //
+        return response()->json();
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ProductCapacityRequest $request)
+    public function store(Request $request)
     {
-        //
+        if ($request->isMethod("POST")) {
+            $param = $request->except("_token");
+        
+            ProductCapacity::create($param);
+        
+            return response()->json(['message' => 'Product Capacity created successfully']);
+        }
     }
 
     /**

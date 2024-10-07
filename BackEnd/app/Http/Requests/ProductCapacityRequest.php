@@ -34,8 +34,8 @@ class ProductCapacityRequest extends FormRequest
     public function messages(): array
     {
         return [
-            "name.required" => "Product Color names cannot be left blank",
-            "name.max" => "Product Color name must not exceed 255 characters",
+            "name.required" => "Product capacity names cannot be left blank",
+            "name.max" => "Product capacity name must not exceed 255 characters",
         ];
     }
 }
