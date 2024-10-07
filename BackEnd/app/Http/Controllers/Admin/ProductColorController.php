@@ -22,7 +22,7 @@ class ProductColorController extends Controller
      */
     public function create()
     {
-        //
+        return response()->json();
     }
 
     /**
@@ -30,7 +30,14 @@ class ProductColorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->isMethod("POST")) {
+            $param = $request->except("_token");
+        
+            ProductColor::create($param);
+        
+            return response()->json(['message' => 'Product Color created successfully']);
+        }
+        
     }
 
     /**
