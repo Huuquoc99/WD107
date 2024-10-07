@@ -6,6 +6,7 @@ use App\Models\ProductColor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductColorRequest;
+use App\Models\ProductVariant;
 
 class ProductColorController extends Controller
 {
@@ -81,6 +82,9 @@ class ProductColorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+            ProductVariant::query()->where("product_color_id", $id)->delete();
+            $productColor = ProductColor::query()->findOrFail($id);
+            $productColor->delete();
+            return response()->json(['message' => 'Product Color deleted successfully']);
     }
 }
