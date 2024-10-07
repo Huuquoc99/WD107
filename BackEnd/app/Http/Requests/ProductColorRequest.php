@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductColor extends FormRequest
+class ProductColorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +23,11 @@ class ProductColor extends FormRequest
     {
         return [
             "name" => "required|max:255",
-            "color_code" => "required|max:7",
+            // "color_code" => "required|max:7",
         ];
-
     }
 
-       /**
+        /**
      * Get the error message for the defined validation rules. 
      *
      * @return array<string, string>
@@ -38,8 +37,8 @@ class ProductColor extends FormRequest
         return [
             "name.required" => "Product Color names cannot be left blank",
             "name.max" => "Product Color name must not exceed 255 characters",
-            "color_code.required" => "Product Color code names cannot be left blank",
-            "color_code.max" => "Product Color code name must not exceed 7 characters",
+            // "color_code.required" => "Product Color code names cannot be left blank",
+            // "color_code.max" => "Product Color code name must not exceed 7 characters",
         ];
     }
 }
