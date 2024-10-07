@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CatalogueController;
+use App\Http\Controllers\Admin\ProductCapacityController;
 use App\Http\Controllers\Admin\ProductColorController;
 use App\Models\Catalogue;
 use Illuminate\Http\Request;
@@ -24,5 +25,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource("admin/catalogue", CatalogueController::class);
 // Route::apiResource("admin/productColor", controller: ProductColorController::class);
 Route::apiResource("admin/productColor", ProductColorController::class);
+Route::apiResource("admin/productCapacity", ProductCapacityController::class);
 
 
