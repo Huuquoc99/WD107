@@ -45,7 +45,8 @@ class ProductCapacityController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $productCapacity = ProductCapacity::query()->findOrFail($id);
+        return response()->json($productCapacity);
     }
 
     /**
@@ -53,7 +54,8 @@ class ProductCapacityController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $productCapacity = ProductCapacity::findOrFail($id);
+        return response()->json($productCapacity);
     }
 
     /**
@@ -61,7 +63,15 @@ class ProductCapacityController extends Controller
      */
     public function update(ProductCapacityRequest $request, string $id)
     {
-        //
+        $param = $request->except("_token", "_method");
+    
+        $productCapacity = ProductCapacity::findOrFail($id);
+        $productCapacity->update($param);
+    
+        return response()->json([
+            'message' => 'Product Capacity updated successfully',
+            'data' => $productCapacity
+        ]);
     }
 
     /**
