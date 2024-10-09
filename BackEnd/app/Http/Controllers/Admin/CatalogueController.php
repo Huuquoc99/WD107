@@ -23,7 +23,7 @@ class CatalogueController extends Controller
      */
     public function create()
     {
-        //
+        return response()->json();
     }
 
     /**
@@ -31,7 +31,22 @@ class CatalogueController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->isMethod("POST"))
+        {
+            $param = $request->except("_token");
+
+            if($request->hasFile("cover"))
+            {
+                $filepath = $request->file("cover")->store("uploads/catalogues", "public");
+            }else{
+                $filepath = null;
+            }
+
+            $param["cover"] = $filepath;
+            Catalogue::create($param);
+            
+            return response()->json(['message' => 'Catalogue created successfully']);
+        }
     }
 
     /**
