@@ -25,7 +25,10 @@ use App\Http\Controllers\Admin\UserController;
     Route::post("login", [AuthController::class, 'login']);
     Route::post("register", [AuthController::class, 'register']);
     // Route::post("logout", [AuthController::class, 'logout'])->middleware("auth:sanctum");
-
+    Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
+    Route::post('/reset-password', [AuthController::class, 'resetPassword']);
+    Route::get('/password/reset/{token}', [AuthController::class, 'showResetForm'])
+        ->name('password.reset');
 // Admin
     Route::apiResource("admin/catalogue", CatalogueController::class);
     // Route::apiResource("users", UserController::class);
