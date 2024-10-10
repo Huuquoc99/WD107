@@ -53,7 +53,8 @@ class ProductColorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $productColor = ProductColor::findOrFail($id);
+        return response()->json($productColor);
     }
 
     /**
@@ -61,7 +62,15 @@ class ProductColorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $param = $request->except("_token", "_method");
+    
+        $productColor = ProductColor::findOrFail($id);
+        $productColor->update($param);
+    
+        return response()->json([
+            'message' => 'Product Color updated successfully',
+            'data' => $productColor
+        ]);
     }
 
     /**
