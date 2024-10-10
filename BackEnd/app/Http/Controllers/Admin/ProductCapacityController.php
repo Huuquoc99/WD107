@@ -22,7 +22,7 @@ class ProductCapacityController extends Controller
      */
     public function create()
     {
-        //
+        return response()->json();
     }
 
     /**
@@ -30,7 +30,13 @@ class ProductCapacityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->isMethod("POST")) {
+            $param = $request->except("_token");
+        
+            ProductCapacity::create($param);
+        
+            return response()->json(['message' => 'Product Capacity created successfully']);
+        }
     }
 
     /**
