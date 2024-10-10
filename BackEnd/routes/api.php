@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Admin\CatalogueController;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,4 @@ use App\Http\Controllers\Admin\CatalogueController;
 
 // Admin
     Route::apiResource("admin/catalogue", CatalogueController::class);
+    Route::apiResource("users", UserController::class);
