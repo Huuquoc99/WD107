@@ -44,7 +44,8 @@ class ProductColorController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $productColor = ProductColor::query()->findOrFail($id);
+        return response()->json($productColor);
     }
 
     /**
