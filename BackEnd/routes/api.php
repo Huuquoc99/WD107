@@ -24,8 +24,15 @@ use App\Http\Controllers\Admin\UserController;
 
     Route::post("login", [AuthController::class, 'login']);
     Route::post("register", [AuthController::class, 'register']);
-    Route::post("logout", [AuthController::class, 'logout'])->middleware("auth:sanctum");
+    // Route::post("logout", [AuthController::class, 'logout'])->middleware("auth:sanctum");
 
 // Admin
     Route::apiResource("admin/catalogue", CatalogueController::class);
-    Route::apiResource("users", UserController::class);
+    // Route::apiResource("users", UserController::class);
+
+// Bắt buộc đăng nhập mới được thực hiện
+    Route::middleware("auth:sanctum")
+    ->group(function(){
+        Route::apiResource("users", UserController::class);
+        Route::post("logout", [AuthController::class, 'logout']);
+    });
