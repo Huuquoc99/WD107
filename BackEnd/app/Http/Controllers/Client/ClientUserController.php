@@ -50,7 +50,27 @@ class ClientUserController extends Controller
     }
 
 
-    
+    public function updatePassword(Request $request, string $id)
+    {
+        // Định nghĩa các quy tắc validation
+        $validatedData = $request->validate([
+            "password" => "required|string|min:8|confirmed", // Mật khẩu bắt buộc, tối thiểu 8 ký tự, phải xác nhận
+        ]);
+
+        if ($request->isMethod("PUT")) {
+            $user = User::findOrFail($id);
+
+            // Mã hóa mật khẩu mới
+            $param['password'] = bcrypt($validatedData['password']); // Sử dụng mật khẩu đã được xác thực
+
+            $user->update($param);
+
+            return response()->json(['message' => 'Password updated successfully']);
+        }
+
+        return response()->json(['message' => 'Invalid request method'], 405);
+    }
+
 
 }
 
