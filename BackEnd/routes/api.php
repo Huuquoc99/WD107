@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Admin\CatalogueController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Client\ClientUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +33,8 @@ use App\Http\Controllers\Admin\UserController;
         ->name('password.reset');
 // Admin
     Route::apiResource("admin/catalogue", CatalogueController::class);
-    Route::apiResource("users", UserController::class)->middleware("auth.sanctum");
+    Route::apiResource("users", UserController::class);
 
+// Client
+    // Route::middleware('auth:sanctum')->put('/user/{id}', [ClientUserController::class, 'updateUserInfo']);
+    Route::put('/user/{id}', [ClientUserController::class, 'updateUserInfo']);
