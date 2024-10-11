@@ -14,10 +14,10 @@ class ClientUserController extends Controller
         // Định nghĩa các quy tắc validation
         $validatedData = $request->validate([
             "name" => "required|max:255",
-            "email" => "required|email|max:255|unique:users,email," . $id, // Kiểm tra email duy nhất, bỏ qua người dùng hiện tại
+            "email" => "required|email|max:255|unique:users,email," . $id, 
             "phone" => "required|max:255",
             "address" => "required|max:255",
-            "avatar" => "nullable|image|mimes:jpeg,png,jpg,gif|max:2048" // Kiểm tra file ảnh
+            "avatar" => "nullable|image|mimes:jpeg,png,jpg,gif|max:2048" 
         ]);
 
         if ($request->isMethod("PUT")) {
@@ -52,16 +52,13 @@ class ClientUserController extends Controller
 
     public function updatePassword(Request $request, string $id)
     {
-        // Định nghĩa các quy tắc validation
         $validatedData = $request->validate([
-            "password" => "required|string|min:8|confirmed", // Mật khẩu bắt buộc, tối thiểu 8 ký tự, phải xác nhận
+            "password" => "required|string|min:8|confirmed", 
         ]);
 
         if ($request->isMethod("PUT")) {
             $user = User::findOrFail($id);
-
-            // Mã hóa mật khẩu mới
-            $param['password'] = bcrypt($validatedData['password']); // Sử dụng mật khẩu đã được xác thực
+            $param['password'] = bcrypt($validatedData['password']); 
 
             $user->update($param);
 
