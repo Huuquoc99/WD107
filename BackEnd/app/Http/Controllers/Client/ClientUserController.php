@@ -11,23 +11,33 @@ class ClientUserController extends Controller
 {
     public function updateUserInfo(Request $request, string $id)
     {
+        // Định nghĩa các quy tắc validation
+        $validatedData = $request->validate([
+            "name" => "required|max:255",
+            "email" => "required|email|max:255|unique:users,email," . $id, // Kiểm tra email duy nhất, bỏ qua người dùng hiện tại
+            "phone" => "required|max:255",
+            "address" => "required|max:255",
+            "avatar" => "nullable|image|mimes:jpeg,png,jpg,gif|max:2048" // Kiểm tra file ảnh
+        ]);
+
         if ($request->isMethod("PUT")) {
-            $param = $request->except("_token", "_method");
+            $param = $validatedData; 
             $user = User::findOrFail($id);
 
             if ($request->hasFile("avatar")) {
                 if ($user->hasFile && Storage::disk("public")->exists($user->avatar)) {
                     Storage::disk("public")->delete($user->avatar);
                 }
+                
                 $filepath = $request->file("avatar")->store("uploads/users", "public");
                 $param["avatar"] = $filepath;
             } else {
-                $param["avatar"] = $user->avatar; // Giữ nguyên avatar nếu không có tệp mới
+                $param["avatar"] = $user->avatar; 
             }
 
-            unset($param["password"]); // Giữ nguyên password nếu không thay đổi
+            unset($param["password"]); 
 
-            $updated = $user->update($param); // Cập nhật thông tin người dùng
+            $updated = $user->update($param); 
 
             if ($updated) {
                 return response()->json(['message' => 'User updated info successfully']);
@@ -38,4 +48,10 @@ class ClientUserController extends Controller
 
         return response()->json(['message' => 'Invalid request method'], 405);
     }
+
+
+    
+
 }
+
+

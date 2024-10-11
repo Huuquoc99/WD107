@@ -38,3 +38,5 @@ use App\Http\Controllers\Client\ClientUserController;
 // Client
     // Route::middleware('auth:sanctum')->put('/user/{id}', [ClientUserController::class, 'updateUserInfo']);
     Route::put('/user/{id}', [ClientUserController::class, 'updateUserInfo']);
+    Route::put('/user/{id}/password', [ClientUserController::class, 'updatePassword']);
+
