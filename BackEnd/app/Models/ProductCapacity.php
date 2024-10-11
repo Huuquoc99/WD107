@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductCapacity extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
 
     protected $fillable = [
         "name",
@@ -17,4 +18,6 @@ class ProductCapacity extends Model
     protected $casts = [
         "status" => "boolean",
     ];
+=======
+>>>>>>> hoa10
 }

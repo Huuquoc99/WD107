@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\ProductVariant;
 use App\Models\ProductCapacity;
 use App\Http\Controllers\Controller;
+<<<<<<< HEAD
 use App\Http\Requests\ProductCapacityRequest;
+=======
+>>>>>>> hoa10
 
 class ProductCapacityController extends Controller
 {
@@ -62,7 +65,11 @@ class ProductCapacityController extends Controller
     /**
      * Update the specified resource in storage.
      */
+<<<<<<< HEAD
     public function update(ProductCapacityRequest $request, string $id)
+=======
+    public function update(Request $request, string $id)
+>>>>>>> hoa10
     {
         $param = $request->except("_token", "_method");
     
