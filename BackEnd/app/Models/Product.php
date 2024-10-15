@@ -2,14 +2,20 @@
 
 namespace App\Models;
 
+<<<<<<< HEAD
 use App\Models\ProductGallery;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+=======
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+>>>>>>> hoa10
 
 class Product extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
 
      use SoftDeletes;
 
@@ -66,4 +72,6 @@ class Product extends Model
     {
         return $this->hasMany(ProductVariant::class);
     }
+=======
+>>>>>>> hoa10
 }
