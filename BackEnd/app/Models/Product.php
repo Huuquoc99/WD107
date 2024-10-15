@@ -11,7 +11,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    // use SoftDeletes;
+     use SoftDeletes;
 
     protected $fillable = [
         "catalogue_id",

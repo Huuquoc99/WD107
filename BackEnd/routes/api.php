@@ -24,9 +24,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource("admin/catalogue", CatalogueController::class);
-// Route::apiResource("admin/productColor", controller: ProductColorController::class);
-Route::apiResource("admin/product", ProductController::class);
+//Route::apiResource("admin/productColor", controller: ProductColorController::class);
+
 Route::apiResource("admin/product-variant/color", ProductColorController::class);
 Route::apiResource("admin/product-variant/capacity", ProductCapacityController::class);
+
+Route::apiResource('admin/products', ProductController::class);
+
 
 
