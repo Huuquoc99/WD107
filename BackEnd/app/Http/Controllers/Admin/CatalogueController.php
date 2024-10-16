@@ -5,10 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Catalogue;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-<<<<<<< HEAD
 use App\Http\Requests\CatalogueRequest;
-=======
->>>>>>> hoa10
 use Illuminate\Support\Facades\Storage;
 
 class CatalogueController extends Controller
@@ -18,10 +15,7 @@ class CatalogueController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         //
-=======
->>>>>>> hoa10
         $listCatalogue = Catalogue::withCount("products")->get();
         // $listCatalogue = Catalogue::all();
         return response()->json( $listCatalogue, 201);
@@ -38,11 +32,7 @@ class CatalogueController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-<<<<<<< HEAD
     public function store(CatalogueRequest $request)
-=======
-    public function store(Request $request)
->>>>>>> hoa10
     {
         if($request->isMethod("POST"))
         {
@@ -60,10 +50,7 @@ class CatalogueController extends Controller
             
             return response()->json(['message' => 'Catalogue created successfully']);
         }
-<<<<<<< HEAD
         
-=======
->>>>>>> hoa10
     }
 
     /**
@@ -87,11 +74,7 @@ class CatalogueController extends Controller
     /**
      * Update the specified resource in storage.
      */
-<<<<<<< HEAD
     public function update(CatalogueRequest $request, string $id)
-=======
-    public function update(Request $request, string $id)
->>>>>>> hoa10
     {
         if($request->isMethod("PUT"))
         {
