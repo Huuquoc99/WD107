@@ -1620,14 +1620,10 @@
   "users": [
     {
       "email": "duonghuuquoc99@gmail.com",
-      "password": "$2a$10$iRbfqkUbi2jfTXSh.c8VHe6IyZvQg64.voLjikKayAqlmvOKgyyX.",
+      "password": "$2a$10$jB6E/tltAROET3VBRK4Wi.HTGd0KdDXcvVm.UX5gM.3Kt0tMhsda.",
+      "name": "Dương Hữu Quốc",
+      "rPassword": "123456789",
       "id": 1
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$lHwJKxSeOx7DZx71Kt14Y.98y2LC4hAjR2FUVQUlsjhEo/UBlVl7y",
-      "id": 2,
-      "role": "admin"
     }
   ]
 }
