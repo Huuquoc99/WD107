@@ -1623,7 +1623,8 @@
       "password": "$2a$10$jB6E/tltAROET3VBRK4Wi.HTGd0KdDXcvVm.UX5gM.3Kt0tMhsda.",
       "name": "Dương Hữu Quốc",
       "rPassword": "123456789",
-      "id": 1
+      "id": 1,
+      "role": "admin"
     }
   ]
 }
