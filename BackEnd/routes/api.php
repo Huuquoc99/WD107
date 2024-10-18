@@ -32,4 +32,6 @@ Route::apiResource("admin/product-variant/capacity", ProductCapacityController::
 Route::apiResource('admin/products', ProductController::class);
 
 
+Route::get('/product/{slug}',       [\App\Http\Controllers\Client\ProductController::class, 'productDetail'])->name('product.detail');
+
 
