@@ -30,7 +30,6 @@ class Handler extends ExceptionHandler
         });
     }
 
-<<<<<<< HEAD
     public function render($request, Throwable $exception)
     {
         if ($exception instanceof ValidationException) {
@@ -52,11 +51,4 @@ class Handler extends ExceptionHandler
         return parent::render($request, $exception);
     }
 
-=======
-    // Trả ra dữ liệu dưới dạng json
-    protected function shouldReturnJson($request, Throwable $e)
-    {
-        return true;
-    }
->>>>>>> 9abc656e79262d5caedc132d325e26ba909f08a8
 }

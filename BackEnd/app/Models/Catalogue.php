@@ -8,13 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Catalogue extends Model
 {
-<<<<<<< HEAD
     use HasFactory;
 
     use SoftDeletes;
-=======
-    use HasFactory, SoftDeletes;
->>>>>>> hoa10
 
     protected $fillable = [
         "name",
