@@ -4,14 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\ProductColor;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductColorRequest;
 use App\Models\ProductVariant;
-=======
-use App\Models\ProductVariant;
-use App\Http\Controllers\Controller;
->>>>>>> hoa10
 
 class ProductColorController extends Controller
 {
@@ -35,11 +30,7 @@ class ProductColorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-<<<<<<< HEAD
     public function store(ProductColorRequest $request)
-=======
-    public function store(Request $request)
->>>>>>> hoa10
     {
         if ($request->isMethod("POST")) {
             $param = $request->except("_token");
@@ -48,10 +39,7 @@ class ProductColorController extends Controller
         
             return response()->json(['message' => 'Product Color created successfully']);
         }
-<<<<<<< HEAD
         
-=======
->>>>>>> hoa10
     }
 
     /**
@@ -75,14 +63,9 @@ class ProductColorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-<<<<<<< HEAD
     public function update(ProductColorRequest $request, string $id)
     {
 
-=======
-    public function update(Request $request, string $id)
-    {
->>>>>>> hoa10
         $param = $request->except("_token", "_method");
     
         $productColor = ProductColor::findOrFail($id);
