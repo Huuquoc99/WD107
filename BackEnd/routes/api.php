@@ -8,7 +8,6 @@ use App\Models\Catalogue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Admin\CatalogueController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\ClientUserController;
 
@@ -27,7 +26,7 @@ use App\Http\Controllers\Client\ClientUserController;
     Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
         return $request->user();
     });
-    
+
 // Auth
     Route::post("login", [AuthController::class, 'login']);
     Route::post("register", [AuthController::class, 'register']);
