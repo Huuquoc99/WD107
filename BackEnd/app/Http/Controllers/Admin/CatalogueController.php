@@ -47,7 +47,7 @@ class CatalogueController extends Controller
 
             $param["cover"] = $filepath;
             Catalogue::create($param);
-            
+
             return response()->json(['message' => 'Catalogue created successfully']);
         }
         

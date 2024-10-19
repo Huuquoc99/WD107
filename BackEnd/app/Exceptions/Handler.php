@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -28,9 +30,33 @@ class Handler extends ExceptionHandler
         });
     }
 
+<<<<<<< HEAD
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof ValidationException) {
+            return response()->json([
+                'message' => 'Dữ liệu không hợp lệ.',
+                'errors' => $exception->errors()
+            ], 422);
+        }
+
+        if ($request->expectsJson()) {
+            $statusCode = $exception instanceof HttpException ? $exception->getStatusCode() : 500;
+
+            return response()->json([
+                'message' => $exception->getMessage() ?: 'Đã xảy ra lỗi.',
+                'status' => 'error'
+            ], $statusCode);
+        }
+
+        return parent::render($request, $exception);
+    }
+
+=======
     // Trả ra dữ liệu dưới dạng json
     protected function shouldReturnJson($request, Throwable $e)
     {
         return true;
     }
+>>>>>>> 9abc656e79262d5caedc132d325e26ba909f08a8
 }
