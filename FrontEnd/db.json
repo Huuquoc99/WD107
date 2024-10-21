@@ -1624,14 +1624,8 @@
       "name": "Dương Hữu Quốc",
       "rPassword": "123456789",
       "id": 1,
-      "role": "admin"
-    },
-    {
-      "email": "admin123@gmail.com",
-      "password": "$2a$10$0qWqdWGy340GEI0.k2ewgulozpXthKnp7SYsCN/KpM3.zZlpDRM4a",
-      "name": "HQQQQ",
-      "rPassword": "123456789",
-      "id": 2
+      "role": "admin",
+      "resetToken": "7yt6ostz90k"
     }
   ]
 }
