@@ -20,9 +20,9 @@
       "storage": "128 GB",
       "sim_type": "Dual SIM",
       "network_connectivity": "5G, Wi-Fi 6",
-      "is_active": 1,
+      "is_active":  0,
       "is_hot_deal": 1,
-      "is_good_deal": 0,
+      "is_good_deal":  0,
       "is_new": 1,
       "is_show_home": 1,
       "created_at": "2024-10-01 12:00:00",
@@ -49,11 +49,11 @@
       "storage": "128 GB",
       "sim_type": "Dual SIM",
       "network_connectivity": "4G, Wi-Fi 5",
-      "is_active": 1,
-      "is_hot_deal": 0,
-      "is_good_deal": 1,
-      "is_new": 0,
-      "is_show_home": 0,
+      "is_active":  1,
+      "is_hot_deal":  0,
+      "is_good_deal":  1,
+      "is_new":  0,
+      "is_show_home":  0,
       "created_at": "2024-10-01 12:00:00",
       "updated_at": "2024-10-01 12:00:00",
       "deleted_at": null
@@ -78,11 +78,11 @@
       "storage": "128 GB",
       "sim_type": "Dual SIM",
       "network_connectivity": "5G, Wi-Fi 6",
-      "is_active": 1,
-      "is_hot_deal": 0,
-      "is_good_deal": 0,
-      "is_new": 1,
-      "is_show_home": 1,
+      "is_active":  1,
+      "is_hot_deal":  0,
+      "is_good_deal":  0,
+      "is_new":  1,
+      "is_show_home":  1,
       "created_at": "2024-10-01 12:00:00",
       "updated_at": "2024-10-01 12:00:00",
       "deleted_at": null
@@ -111,7 +111,7 @@
       "is_hot_deal": 0,
       "is_good_deal": 1,
       "is_new": 0,
-      "is_show_home": 0,
+      "is_show_home":  0,
       "created_at": "2024-10-01 12:00:00",
       "updated_at": "2024-10-01 12:00:00",
       "deleted_at": null
@@ -136,14 +136,70 @@
       "storage": "128 GB",
       "sim_type": "Dual SIM",
       "network_connectivity": "5G, Wi-Fi 6",
-      "is_active": 1,
-      "is_hot_deal": 1,
-      "is_good_deal": 1,
-      "is_new": 1,
-      "is_show_home": 1,
+      "is_active":  1,
+      "is_hot_deal":  1,
+      "is_good_deal":  1,
+      "is_new":  1,
+      "is_show_home":  1,
       "created_at": "2024-10-01 12:00:00",
       "updated_at": "2024-10-01 12:00:00",
       "deleted_at": null
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Samsung",
+      "cover":"",
+      "is_active":  1,
+      "created_at": "2024-10-01 12:00:00",
+      "updated_at": "2024-10-01 12:00:00",
+      "deleted_at": null
+    
+      
+    },
+    {
+      "id": 2,
+      "name": "Xiaomi",
+      "cover":"",
+      "is_active":  0,
+      "created_at": "2024-10-01 12:00:00",
+      "updated_at": "2024-10-01 12:00:00",
+      "deleted_at": null
+    
+      
+    },
+    {
+      "id": 3,
+      "name": "IPhone",
+      "cover":"",
+      "is_active":  1,
+      "created_at": "2024-10-01 12:00:00",
+      "updated_at": "2024-10-01 12:00:00",
+      "deleted_at": null
+    
+      
+    },
+    {
+      "id": 4,
+      "name": "Oppo",
+      "cover":"",
+      "is_active":  1,
+      "created_at": "2024-10-01 12:00:00",
+      "updated_at": "2024-10-01 12:00:00",
+      "deleted_at": null
+    
+      
+    },
+    {
+      "id": 5,
+      "name": "Nokia",
+      "cover":"",
+      "is_active":  1,
+      "created_at": "2024-10-01 12:00:00",
+      "updated_at": "2024-10-01 12:00:00",
+      "deleted_at": null
+      
     }
   ],
   "users": []

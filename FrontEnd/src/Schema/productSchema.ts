@@ -1,0 +1,26 @@
+import Joi from "joi";
+
+export const productSchema = Joi.object({
+  name: Joi.string().required().min(1),
+  sku: Joi.string().required(),
+  catalogue_id: Joi.string().required(),
+  // img_thumnail: Joi.string(),
+  price_regular: Joi.number().required().min(0),
+  price_sale: Joi.number().required().min(0),
+  description: Joi.string().required(),
+  short_description: Joi.string().required(),
+  screen_size: Joi.string().required(),
+  battery_capacity: Joi.string().required(),
+  camera_resolution: Joi.string().required(),
+  operating_system: Joi.string().required(),
+  processor: Joi.string().required(),
+  storage: Joi.string().required(),
+  ram: Joi.string().required(),
+  sim_type: Joi.string().required(),
+  network_connectivity: Joi.string().required(),
+  is_active: Joi.number().required(),
+  is_hot_deal: Joi.number().required(),
+  is_good_deal: Joi.number().required(),
+  is_new: Joi.number().required(),
+  is_show_home: Joi.number().required(),
+});

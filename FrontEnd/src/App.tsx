@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import LayoutClient from "./layouts/layoutClient/LayoutClient";
+import Home from "./layouts/layoutClient/Home";
+import LayoutAdmin from "./layouts/layoutAdmin/LayoutAdmin";
+import Dashboard from "./pages/Admin/Products/Dashboard";
+import Products1 from "./pages/Admin/Products/Products";
+import AddProduct from "./pages/Admin/Products/AddProduct";
+import Categories from "./pages/Admin/Category/Categories";
+import AddCategory from "./pages/Admin/Category/AddCategory";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Routes>
+        <Route path="/" element={<LayoutClient />}>
+          <Route index element={<Home />} />
+        </Route>
+
+
+          {/* Admin */}
+        <Route path="/admin" element={<LayoutAdmin />}>
+          <Route index element={<Dashboard />} />
+
+          {/* San pham */}
+          <Route path="products" element={<Products1 />} />
+          <Route path="add/product" element={<AddProduct />} />
+
+           {/* Danh muc */}
+          <Route path="category" element={<Categories />} />
+          <Route path="add/category" element={<AddCategory />} />
+        </Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
